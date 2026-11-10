@@ -1,0 +1,25 @@
+---
+description: Project-wide workflow restrictions for KiCad plugins
+alwaysApply: true
+---
+
+# Project Workflow Restrictions
+
+These restrictions apply to the entire `kicad-plugins` workspace.
+
+## Never Compile Python Scripts
+
+- Do NOT run `python -m compileall`, `py_compile`, `pyinstaller`, `cx_Freeze`, `nuitka`, or any other tool that compiles / bundles `.py` files.
+- Do NOT generate or commit `.pyc`, `.pyo`, `__pycache__/`, `.exe`, or other build artifacts from Python sources.
+- Leave all Python scripts as plain source files. KiCad loads them directly at runtime.
+
+## Never Copy Files to the KiCad Plugins Directory
+
+- Do NOT copy, move, symlink, or otherwise deploy files into the KiCad plugins directory (e.g. `%APPDATA%\kicad\*\scripting\plugins`, `~/.local/share/kicad/*/scripting/plugins`, or any `shortcut_to_plugin_dir.lnk` target).
+- Do NOT run, suggest running, or prompt the user to run any `copy-to-plugins`, `install-plugin`, `deploy`, or equivalent installation script.
+- Do NOT ask the user "should I copy this to the plugins folder?" — the answer is always no. The user handles deployment manually.
+
+## What To Do Instead
+
+- Edit source files in place within the repo.
+- When a change is complete, simply report what was changed. Do not offer to install, deploy, or compile.

@@ -1,0 +1,78 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+
+    // Copy Stencil to Plugins
+    {
+      "label": "Copy Stencil",
+      "type": "shell",
+      "command": "python stencil/copy-to-plugins.py",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "statusbar": {
+          "hide": false,
+          "color": "#3de28e"
+        }
+      },
+    },
+  
+
+    // Copy Constraints to Plugins
+    {
+      "label": "Copy Constraints",
+      "type": "shell",
+      "command": "python connstraints/copy-to-plugins.py",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "statusbar": {
+          "hide": false,
+          "color": "#e28e9b"
+        }
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "dedicated",
+        "reveal": "always"
+      }
+    },
+
+    // Copy KiCAD-AI to Plugins
+    {
+      "label": "Copy KiCAD-AI",
+      "type": "shell",
+      "command": "python kicad-ai/copy-to-plugins.py",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "statusbar": {
+          "hide": false,
+          "color": "#ff35da"
+        }
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "dedicated",
+        "reveal": "always"
+      }
+    },
+
+    // Copy EasyEDA2KiCad to Plugins
+    {
+      "label": "Copy EasyEDA2KiCad",
+      "type": "shell",
+      "command": "python easyeda2kicad_plugin-main/copy-to-plugins.py",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "statusbar": {
+          "hide": false,
+          "color": "#f9e07b"
+        }
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "dedicated",
+        "reveal": "always"
+      }
+    },
+
+  ]
+}

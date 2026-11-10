@@ -1,0 +1,10 @@
+{
+  "frontend": {
+    "folders_to_include": [],
+    "extensions_to_include": []
+  },
+  "backend": {
+    "folders_to_include": [],
+    "extensions_to_include": []
+  }
+}
